@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTN MoMo – Loan Approved</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mtn-dark: #003366;
+    --mtn-gold: #FFD700;
+    --mtn-light: #004080;
+    --grad: linear-gradient(to right, #003366, #004080);
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #003366, #004080); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px 16px; }
+
+  .appr-wrap { width: 100%; max-width: 520px; }
+  .appr-top { background: #fff; border-radius: var(--radius) var(--radius) 0 0; padding: 28px 24px 0; text-align: center; }
+  .check-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #004080); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.3rem; color: #fff; box-shadow: 0 4px 16px rgba(255, 215, 0, 0.5); }
+  .appr-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+  .appr-sub { font-size: 0.82rem; color: #888; margin-bottom: 18px; }
+
+  .appr-banner { background: var(--grad); padding: 16px; margin: 0 -24px; text-align: center; }
+  .appr-banner .abl { font-size: 0.72rem; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.06em; }
+  .appr-banner .aba { font-size: 2rem; font-weight: 700; color: #fff; }
+
+  .comp-box { background: #FFFBEA; border: 1px solid #F5C842; padding: 14px 16px; }
+  .comp-box .ch { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #a07000; margin-bottom: 6px; }
+  .comp-box p { font-size: 0.78rem; color: #7a5500; line-height: 1.6; }
+
+  .ld-card { background: #fff; padding: 20px 24px; }
+  .ld-htitle { font-size: 0.82rem; font-weight: 600; color: #444; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+  .ld-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f5f5f5; }
+  .ld-row:last-child { border-bottom: none; }
+  .ld-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+  .ic-g { background: linear-gradient(135deg, #2ECC71, #27AE60); color: #fff; }
+  .ic-b { background: linear-gradient(135deg, #3498DB, #2980B9); color: #fff; }
+  .ic-p { background: linear-gradient(135deg, #9B59B6, #8E44AD); color: #fff; }
+  .ld-lbl { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ld-val { font-size: 0.9rem; font-weight: 600; }
+
+  .nxt-steps { background: #fff; padding: 14px 24px; display: flex; align-items: flex-start; gap: 8px; border-top: 1px solid #f0f0f0; }
+  .nxt-steps p { font-size: 0.79rem; color: #888; line-height: 1.5; }
+
+  .rth-wrap { background: #fff; border-radius: 0 0 var(--radius) var(--radius); padding: 14px 24px 24px; }
+  .rth-btn { width: 100%; padding: 13px; background: var(--grad); color: #fff; border: none; border-radius: 8px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; cursor: pointer; font-family: 'Inter', sans-serif; transition: opacity 0.2s; }
+  .rth-btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+  <div class="appr-wrap">
+    <div class="appr-top">
+      <div class="check-circle">✓</div>
+      <h2 class="appr-title">Loan Approved!</h2>
+      <p class="appr-sub">Your loan has been successfully approved.</p>
+      <div class="appr-banner">
+        <div class="abl">Amount to Receive</div>
+        <div class="aba" id="aprAmount">ZMW 1,000,000</div>
+      </div>
+    </div>
+    <div class="comp-box">
+      <div class="ch">ℹ️ Important Information</div>
+      <p>The funds will be deposited directly to your MTN MoMo account within 5 minutes. Please ensure your phone number is correct.</p>
+    </div>
+    <div class="ld-card">
+      <div class="ld-htitle">📊 Loan Details</div>
+      <div class="ld-row">
+        <div class="ld-icon ic-g">💰</div>
+        <div>
+          <div class="ld-lbl">Amount</div>
+          <div class="ld-val" id="aprAmt">ZMW 1,000,000</div>
+        </div>
+      </div>
+      <div class="ld-row">
+        <div class="ld-icon ic-b">📅</div>
+        <div>
+          <div class="ld-lbl">Term</div>
+          <div class="ld-val" id="aprTerm">48 Months</div>
+        </div>
+      </div>
+      <div class="ld-row">
+        <div class="ld-icon ic-p">💳</div>
+        <div>
+          <div class="ld-lbl">Monthly Payment</div>
+          <div class="ld-val" id="aprMth">ZMW 24,000</div>
+        </div>
+      </div>
+    </div>
+    <div class="nxt-steps">
+      <span style="font-size: 1.2rem;">📌</span>
+      <p><strong>Next Steps:</strong> To start repaying, you can set up an automatic payment plan in your MTN MoMo account in the next section.</p>
+    </div>
+    <div class="rth-wrap">
+      <button class="rth-btn" onclick="alert('Thank you! Your loan has been disbursed.')">FINISH</button>
+    </div>
+  </div>
+
+  <script>
+    // Load data from localStorage
+    const amount = localStorage.getItem('loanAmount') || '1000000';
+    const term = localStorage.getItem('loanTerm') || '48 Months';
+    const monthly = Math.ceil(parseInt(amount) / parseInt(term));
+
+    document.getElementById('aprAmount').textContent = 'ZMW ' + parseInt(amount).toLocaleString();
+    document.getElementById('aprAmt').textContent = 'ZMW ' + parseInt(amount).toLocaleString();
+    document.getElementById('aprTerm').textContent = term;
+    document.getElementById('aprMth').textContent = 'ZMW ' + monthly.toLocaleString();
+  </script>
+</body>
+</html>
