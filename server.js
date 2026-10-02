@@ -6,8 +6,8 @@ const url = require('url');
 const PORT = process.env.PORT || 8000;
 
 // Admin credentials
-const ADMIN_USERNAME = 'mtnadmin';
-const ADMIN_PASSWORD = 'mtn@admin';
+const ADMIN_USERNAME = 'admin';
+const ADMIN_PASSWORD = 'mtn@admin#';
 
 // Store sessions
 const sessions = {};
