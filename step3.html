@@ -100,10 +100,10 @@
       <div class="prog-row"><div class="prog-seg done"></div><div class="prog-seg done"></div><div class="prog-seg now"></div></div>
       <div class="msg-box error" id="s3Err"><span class="msg-icon">✕</span><span id="s3ErrTxt"></span></div>
       <div class="field"><label>Employment Status</label><div class="sel-wrap"><select id="s3em"><option>Employed</option><option selected>Self-employed</option><option>Unemployed</option><option>Retired</option><option>Student</option></select></div></div>
-      <div class="field"><label>Annual Income (ZMW)</label><input type="number" id="s3in" placeholder="Enter annual income" oninput="clearErr('s3Err')"></div>
+      <div class="field"><label>Annual Income (UGX)</label><input type="number" id="s3in" placeholder="Enter annual income" oninput="clearErr('s3Err')"></div>
       <div class="sum-box" id="summaryBox">
         <h3>Application Summary</h3>
-        <div class="sum-row"><span class="sk">Loan Amount:</span><span class="sv" id="sA">ZMW 1,000,000</span></div>
+        <div class="sum-row"><span class="sk">Loan Amount:</span><span class="sv" id="sA">UGX 1,000,000</span></div>
         <div class="sum-row"><span class="sk">Loan Term:</span><span class="sv" id="sT">48 Months</span></div>
         <div class="sum-row"><span class="sk">Purpose:</span><span class="sv" id="sP">—</span></div>
         <div class="sum-row"><span class="sk">Applicant:</span><span class="sv" id="sN">—</span></div>
@@ -137,11 +137,11 @@
       const lastName = localStorage.getItem('lastName') || '';
       const phone = localStorage.getItem('phone') || '';
 
-      document.getElementById('sA').textContent = 'ZMW ' + parseInt(amount).toLocaleString();
+      document.getElementById('sA').textContent = 'UGX ' + parseInt(amount).toLocaleString();
       document.getElementById('sT').textContent = term;
       document.getElementById('sP').textContent = purpose;
       document.getElementById('sN').textContent = firstName + ' ' + lastName || '—';
-      document.getElementById('sPh').textContent = phone ? '+260 ' + phone : '—';
+      document.getElementById('sPh').textContent = phone ? '+256 ' + phone : '—';
     }
     updateSummary();
 

@@ -97,7 +97,7 @@
         <h2>Loan Calculator</h2>
         <div class="calc-row2">
           <span>Amount</span>
-          <span class="cv" id="calcAmt">ZMW 500,000</span>
+          <span class="cv" id="calcAmt">UGX 500,000</span>
         </div>
         <div class="calc-row2">
           <span>Term</span>
@@ -105,12 +105,12 @@
         </div>
         <input type="range" id="amtSlider" min="500000" max="5000000" step="100000" value="1000000" oninput="updateCalc()">
         <div class="range-ends">
-          <span>ZMW 500,000</span>
-          <span>ZMW 5,000,000</span>
+          <span>UGX 500,000</span>
+          <span>UGX 5,000,000</span>
         </div>
         <div class="monthly-box">
           <span class="ml">Monthly Payment</span>
-          <span class="ma" id="monthlyAmt">ZMW 24,000</span>
+          <span class="ma" id="monthlyAmt">UGX 24,000</span>
         </div>
       </div>
       <button class="btn-grad" onclick="startApplication()">START APPLICATION</button>
@@ -143,9 +143,9 @@
   // LANDING PAGE CALC
   function updateCalc() {
     const amt = +document.getElementById('amtSlider').value;
-    document.getElementById('calcAmt').textContent = 'ZMW ' + amt.toLocaleString();
+    document.getElementById('calcAmt').textContent = 'UGX ' + amt.toLocaleString();
     const monthly = Math.ceil(amt / 48);
-    document.getElementById('monthlyAmt').textContent = 'ZMW ' + monthly.toLocaleString();
+    document.getElementById('monthlyAmt').textContent = 'UGX ' + monthly.toLocaleString();
   }
 
   // INIT
